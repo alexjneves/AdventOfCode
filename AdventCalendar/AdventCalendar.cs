@@ -14,6 +14,7 @@ namespace AdventCalendar
 
             var day2Solution = new Day2Solution();
             PrintAnswer(2, 1, day2Solution.SolvePart1());
+            PrintAnswer(2, 2, day2Solution.SolvePart2());
         }
 
         private static void PrintAnswer(int day, int part, int answer)

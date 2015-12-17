@@ -17,5 +17,10 @@ namespace Day2
         {
             return (2 * Length * Width) + (2 * Width * Height) + (2 * Height * Length);
         }
+
+        public int CalculateVolume()
+        {
+            return Length * Width * Height;
+        }
     }
 }
