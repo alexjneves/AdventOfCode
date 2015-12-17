@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Common;
 
 namespace Day2
 {
-    public sealed class Day2Solution
+    public sealed class Day2Solution : IDailyPuzzle
     {
         private const string PresentDimensionsFile = "PresentDimensions.txt";
         private const char DimensionDelimiter = 'x';
