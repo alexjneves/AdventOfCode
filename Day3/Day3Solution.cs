@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Common;
 
 namespace Day3
@@ -30,7 +32,29 @@ namespace Day3
 
         public int SolvePart2()
         {
-            return -1;
+            var santaGrid = new HousesGrid();
+            var robotGrid = new HousesGrid();
+
+            for (var i = 0; i < _directions.Length; ++i)
+            {
+                var direction = _directions[i];
+
+                if (i % 2 == 0)
+                {
+                    santaGrid.VisitHouse(direction);
+                }
+                else
+                {
+                    robotGrid.VisitHouse(direction);
+                }
+            }
+
+            var visitedHouses = new List<Position>();
+            visitedHouses.AddRange(santaGrid.VisitedHouses);
+            visitedHouses.AddRange(robotGrid.VisitedHouses);
+
+            var uniqueVisitedHouses = visitedHouses.Distinct(new Position.PositionEqualityComparer());
+            return uniqueVisitedHouses.Count();
         }
     }
 }
