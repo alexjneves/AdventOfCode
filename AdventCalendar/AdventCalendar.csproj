@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{D4D0BF9E-A953-432F-8457-7A3CA8379612}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Day1\Day1.csproj">
       <Project>{1aecbe53-787c-44e6-8806-6406e1832655}</Project>
       <Name>Day1</Name>
