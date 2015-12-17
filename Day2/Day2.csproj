@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77930324-59CF-48AD-A790-90B3F8D64433}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9765A69E-57EA-45D4-ACE4-F3A4F234135B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdventCalendar</RootNamespace>
-    <AssemblyName>AdventCalendar</AssemblyName>
+    <RootNamespace>Day2</RootNamespace>
+    <AssemblyName>Day2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdventCalendar.cs" />
+    <Compile Include="Day2Solution.cs" />
+    <Compile Include="Present.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Day1\Day1.csproj">
-      <Project>{1aecbe53-787c-44e6-8806-6406e1832655}</Project>
-      <Name>Day1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Day2\Day2.csproj">
-      <Project>{9765A69E-57EA-45D4-ACE4-F3A4F234135B}</Project>
-      <Name>Day2</Name>
-    </ProjectReference>
+    <Content Include="PresentDimensions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
