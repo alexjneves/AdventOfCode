@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Day4Solution.cs" />
     <Compile Include="Md5SubstringHashSolver.cs" />
+    <Compile Include="Md5SubstringHashSolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
