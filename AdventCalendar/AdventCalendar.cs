@@ -4,6 +4,7 @@ using Day2;
 using Day3;
 using Day4;
 using Day5;
+using Day6;
 
 namespace AdventCalendar
 {
@@ -30,6 +31,10 @@ namespace AdventCalendar
             var day5Solution = new Day5Solution();
             PrintAnswer(5, 1, day5Solution.SolvePart1());
             PrintAnswer(5, 2, day5Solution.SolvePart2());
+
+            var day6Solution = new Day6Solution();
+            PrintAnswer(6, 1, day6Solution.SolvePart1());
+            PrintAnswer(6, 2, day6Solution.SolvePart2());
         }
 
         private static void PrintAnswer(int day, int part, int answer)
