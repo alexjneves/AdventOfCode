@@ -58,8 +58,14 @@
     <Compile Include="ForbiddenSubstringsValidator.cs" />
     <Compile Include="ForbiddenSubstringsValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatingCharWithGapValidator.cs" />
+    <Compile Include="RepeatingCharWithGapValidatorTests.cs" />
+    <Compile Include="RepeatingPairsValidator.cs" />
+    <Compile Include="RepeatingPairsValidatorTests.cs" />
     <Compile Include="SantaString.cs" />
     <Compile Include="SantaStringTests.cs" />
+    <Compile Include="UpdatedSantaString.cs" />
+    <Compile Include="UpdatedSantaStringTests.cs" />
     <Compile Include="VowelCounter.cs" />
     <Compile Include="VowelCounterTests.cs" />
   </ItemGroup>

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using Common;
 
@@ -24,7 +22,7 @@ namespace Day5
 
         public int SolvePart2()
         {
-            return -1;
+            return _rawSantaStrings.Count(rst => new UpdatedSantaString(rst).IsNice());
         }
     }
 }
