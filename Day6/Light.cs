@@ -1,14 +1,7 @@
 ﻿namespace Day6
 {
-    internal sealed class Light
+    internal abstract class Light
     {
-        private bool _on;
-
-        public Light()
-        {
-            _on = false;
-        }
-
         public void ExecuteInstruction(LightInstruction instruction)
         {
             switch (instruction)
@@ -25,21 +18,11 @@
             }
         }
 
-        private void TurnOn()
-        {
-            _on = true;
-        }
+        protected abstract void TurnOn();
 
-        private void TurnOff()
-        {
-            _on = false;
-        }
+        protected abstract void TurnOff();
 
-        private void Toggle()
-        {
-            _on = !_on;
-        }
+        protected abstract void Toggle();
 
-        public bool IsOn() => _on;
     }
 }
