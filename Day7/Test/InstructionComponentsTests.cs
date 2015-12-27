@@ -1,3 +1,4 @@
+using Day7.Instruction;
 using FluentAssertions;
 using NUnit.Framework;
 

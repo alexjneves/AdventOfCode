@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Day7
+namespace Day7.Instruction
 {
     internal sealed class InstructionComponents
     {

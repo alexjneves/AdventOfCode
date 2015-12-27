@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Common;
+using Day7.Instruction;
 using Day7.Instruction.Instructions;
 
 namespace Day7
 {
-    public class Day7Solution : IDailyPuzzle
+    public sealed class Day7Solution : IDailyPuzzle
     {
         private const string RawInstructionsFile = "RawInstructions.txt";
         private const string WireAKey = "a";

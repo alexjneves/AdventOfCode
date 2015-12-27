@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using Day7.Instruction;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace Day7.Test

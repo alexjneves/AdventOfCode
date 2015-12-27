@@ -1,3 +1,4 @@
+using Day7.Instruction;
 using NSubstitute;
 
 namespace Day7.Test

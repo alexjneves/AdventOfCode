@@ -1,3 +1,4 @@
+using Day7.Instruction;
 using Day7.Instruction.Instructions;
 using FluentAssertions;
 using NSubstitute;

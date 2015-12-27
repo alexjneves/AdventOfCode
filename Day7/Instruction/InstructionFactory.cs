@@ -1,7 +1,7 @@
 using System;
 using Day7.Instruction.Instructions;
 
-namespace Day7
+namespace Day7.Instruction
 {
     internal sealed class InstructionFactory
     {
