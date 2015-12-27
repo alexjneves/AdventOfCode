@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Common;
 using Day7.Instruction.Instructions;
 
@@ -10,23 +11,46 @@ namespace Day7
     public class Day7Solution : IDailyPuzzle
     {
         private const string RawInstructionsFile = "RawInstructions.txt";
-        private const string Part1Wire = "a";
+        private const string WireAKey = "a";
+        private const string AssignmentOfBPattern = @"^\d+\s->\sb$";
+        private const int Part1Answer = 46065;
 
-        private readonly IList<IInstruction> _instructions;
+        private readonly IList<string> _rawInstructions;
 
         public Day7Solution()
         {
-            var instructionFactory = new InstructionFactory();
-            var rawInstructions = File.ReadLines(RawInstructionsFile);
-
-            _instructions = rawInstructions.Select(instructionFactory.Create).ToList();
+            _rawInstructions = File.ReadLines(RawInstructionsFile).ToList();
         }
 
         public int SolvePart1()
         {
-            var circuit = new Circuit();
-            var instructions = new List<IInstruction>(_instructions);
+            return DetermineWireSignalFromInstructions(WireAKey, _rawInstructions);
+        }
 
+        public int SolvePart2()
+        {
+            var rawInstructions = new List<string>(_rawInstructions);
+            rawInstructions.RemoveAll(ri => Regex.IsMatch(ri, AssignmentOfBPattern));
+
+            rawInstructions.Add($"{Part1Answer} -> b");
+
+            return DetermineWireSignalFromInstructions(WireAKey, rawInstructions);
+        }
+
+        private static int DetermineWireSignalFromInstructions(string wireKey, IEnumerable<string> rawInstructions)
+        {
+            var circuit = new Circuit();
+
+            var instructionFactory = new InstructionFactory();
+            var instructions = rawInstructions.Select(instructionFactory.Create).ToList();
+
+            WireCircuit(circuit, instructions);
+
+            return GetWireSignal(wireKey, circuit);
+        }
+
+        private static void WireCircuit(ICircuit circuit, IList<IInstruction> instructions)
+        {
             do
             {
                 foreach (var instruction in instructions)
@@ -36,16 +60,18 @@ namespace Day7
 
                 instructions = instructions.Where(i => i.ExecutedSuccessfully == false).ToList();
             } while (instructions.Any());
-
-            int resultSignal;
-            circuit.TryGetWireSignal(new Wire(Part1Wire), out resultSignal);
-
-            return resultSignal;
         }
 
-        public int SolvePart2()
+        private static int GetWireSignal(string wireKey, ICircuit circuit)
         {
-            return -1;
+            int wireSignal;
+
+            if (!circuit.TryGetWireSignal(new Wire(wireKey), out wireSignal))
+            {
+                throw new Exception($"Wire {wireKey} does not exist in circuit");
+            }
+
+            return wireSignal;
         }
     }
 }
