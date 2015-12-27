@@ -78,6 +78,10 @@
       <Project>{AE218D41-5C30-471D-AC5C-4E2F538303A1}</Project>
       <Name>Day6</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day7\Day7.csproj">
+      <Project>{6685B0AD-5CB6-4E6E-83C8-186EE8F07915}</Project>
+      <Name>Day7</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
